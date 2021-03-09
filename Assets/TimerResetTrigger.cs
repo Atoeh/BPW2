@@ -7,16 +7,19 @@ public class TimerResetTrigger : MonoBehaviour
 {
     public Text text;
 
-    private void OnTriggerEnter(Collider collider)
+    private void OnTriggerStay(Collider collider)
     {
         if (collider.tag == "Player")
         {
             text.text = "The timer has been reset";
         }
-        else
-        {
-            text.text = " ";
-        }
     }
 
+    void OnTriggerEnter(Collider collider)
+    {
+        if (collider.tag == "Player")
+        {
+               
+        }
+    }
 }

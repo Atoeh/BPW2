@@ -4,28 +4,24 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-
-public CharacterController controller;
-
-public float speed = 12f;
-public float gravity = -9.81f;
-
-public Transform groundCheck;
-public float groundDistance = 0.4f;
-public LayerMask groundMask;
-
-Vector3 velocity;
-bool isGrounded;
+    public CharacterController controller;
+    public float speed = 12f;
+    public float gravity = -9.81f;
+    public float jumpHeight = 3f;
+    public KeyCode jump;
+    public Transform groundCheck;
+    public float groundDistance = 0.4f;
+    public LayerMask groundMask;
+    Vector3 velocity;
+    bool isGrounded;
 
     void Update()
     {
-
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);//maakt een sphere aan en bepaald of er iets in contact komt (vloer)
         if(isGrounded && velocity.y<0)//wanneer in contact met de grond
         {
             velocity.y = -2f;//ipv constant toenemend getal wordt de downforce verranderd tot -2f
         }
-
 
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
@@ -34,9 +30,14 @@ bool isGrounded;
 
         controller.Move(move*speed*Time.deltaTime);
 
+        if (Input.GetKeyDown(jump))
+        {
+            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+            Debug.Log("Why are u not jumping");
+        }
+
         velocity.y += gravity * Time.deltaTime;                 //zwaartekracht_snelheid
 
         controller.Move(velocity * Time.deltaTime);             //twee maal vermenigvuldigen wegens feit dat het m/s^2 is
-
     }
 }

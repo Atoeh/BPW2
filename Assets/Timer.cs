@@ -11,11 +11,12 @@ public class Timer : MonoBehaviour
     public Text timerText;
     public bool countDown = false;
     public int resetTimer = 50;
+    public GameObject resetTrigger;
 
     // Start is called before the first frame update
     void Start()
     {
-        currentTime = startingTime; 
+        currentTime = startingTime;
         //timerText.GetComponent<Text>().text = "00" + currentTime;
     }
 
@@ -26,23 +27,29 @@ public class Timer : MonoBehaviour
         {
             StartCoroutine(TimerCoroutine());
         }
+
+        if (currentTime <= 0)
+        { 
+            
+        }
     }
-     
+
     IEnumerator TimerCoroutine()
     {
         countDown = true;
         yield return new WaitForSeconds(1);
         currentTime -= 1;
-        timerText.GetComponent<Text>().text = "00" + currentTime;
+        timerText.GetComponent<Text>().text = currentTime.ToString();
         countDown = false;
     }
-
-    private void OnTriggerEnter(Collider collider)
-    {
-        if (collider.tag == "Player")
-        {
-            currentTime = resetTimer;
-            Debug.Log("triggerRestart");
-        }
-    }
+ 
+    
+   // private void OnTriggerEnter(Collider collider)
+    //{
+    //    if (collider.tag == "Player")
+    //    {
+    //        currentTime = resetTimer;
+    //        Debug.Log("triggerRestart");
+    //    }
+   // }
 }
