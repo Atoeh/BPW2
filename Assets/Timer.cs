@@ -11,7 +11,8 @@ public class Timer : MonoBehaviour
     public Text timerText;
     public bool countDown = false;
     public int resetTimer = 50;
-    public GameObject resetTrigger;
+    public GameObject GameOverScreen;
+    //public float easyExtraTime
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +21,21 @@ public class Timer : MonoBehaviour
         //timerText.GetComponent<Text>().text = "00" + currentTime;
     }
 
+    public void dificultyEasy()
+    {
+        currentTime = currentTime + 20;
+    }
+
+    public void dificultyMedium()
+    {
+        currentTime = currentTime + 10;
+
+    }
+
+    public void dificultyHard()
+    {
+        currentTime = currentTime;
+    }
     // Update is called once per frame
     void Update()
     {
@@ -28,9 +44,11 @@ public class Timer : MonoBehaviour
             StartCoroutine(TimerCoroutine());
         }
 
-        if (currentTime <= 0)
-        { 
-            
+        if (currentTime == 0)
+        {
+            Time.timeScale = 0f;
+            Cursor.lockState = CursorLockMode.None;
+            GameOverScreen.SetActive(true);            
         }
     }
 

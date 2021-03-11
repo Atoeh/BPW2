@@ -10,7 +10,7 @@ public class PushScript2 : MonoBehaviour
     public Collider opposingTrigger;
     public bool triggeredOpposition = false;
 
-    public Text inRange;
+    public Text inRangeText;
 
     public float smoothTime = 0.3F;
 
@@ -30,27 +30,40 @@ public class PushScript2 : MonoBehaviour
 
         if (collider.tag == "Player")
         {
-
-            //bool henk = opposingTrigger.GetComponent<bool>();
-            //Debug.Log(henk);
+            inRangeText.text = "Press e to push";
 
             if (Input.GetKeyDown(push))           
              {
-                Debug.Log("moveYourAss");
+                //Debug.Log("moveYourAss");
                 cube.transform.Translate(x, 0, z);
              }
         }
-  }
 
-    //Function that determines whether you can go in opposing way
-    private void OnTriggerEnter(Collider collider)
-    {
+
+        if (collider.tag == "Obstacle")
+        {
+            triggeredOpposition = true;
+            opposingTrigger.enabled = false;
+        }
+    }
+
+  private void OnTriggerExit(Collider collider)
+   {
+        if (collider.tag == "Player")
+        {
+            inRangeText.text = " ";
+        }
+
         if (collider.tag == "Obstacle")
         {
             Debug.Log("Funneee hehe");
-            triggeredOpposition = true;
+            triggeredOpposition = false;
+            opposingTrigger.enabled = true;
         }
     }
+
+    //Function that determines whether you can go in opposing way
+
 
     private void Start()
     {

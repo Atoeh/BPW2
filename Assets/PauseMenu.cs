@@ -8,6 +8,8 @@ public class PauseMenu : MonoBehaviour
 
     public static bool gamePaused = false;
     public GameObject pauseMenuUI;
+    public string sceneRestartGame = "SampleScene";
+    public string sceneRestartLevel = "SampleScene";
 
 
     // Update is called once per frame
@@ -48,6 +50,14 @@ public class PauseMenu : MonoBehaviour
     {
         Debug.Log("QuitGame");
         Application.Quit();
+    }
+    public void RestartLevel1()
+    {
+        SceneManager.LoadScene(sceneRestartLevel);
+    }
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(sceneRestartGame);
     }
 
 }
