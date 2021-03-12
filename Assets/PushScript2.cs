@@ -9,7 +9,7 @@ public class PushScript2 : MonoBehaviour
     public GameObject cube;
     public Collider opposingTrigger;
     public bool triggeredOpposition = false;
-
+    public Rigidbody cubeRigidbody;
     public Text inRangeText;
 
     public float smoothTime = 0.3F;
@@ -32,17 +32,21 @@ public class PushScript2 : MonoBehaviour
         {
             inRangeText.text = "Press e to push";
 
-            if (Input.GetKeyDown(push))           
-             {
+            if (Input.GetKeyDown(push))
+            {
                 //Debug.Log("moveYourAss");
                 cube.transform.Translate(x, 0, z);
-             }
+            }
+        }
+        else 
+        {
+           cubeRigidbody.constraints = RigidbodyConstraints.FreezePosition;
         }
 
 
         if (collider.tag == "Obstacle")
         {
-            triggeredOpposition = true;
+            //triggeredOpposition = true;
             opposingTrigger.enabled = false;
         }
     }
@@ -57,7 +61,7 @@ public class PushScript2 : MonoBehaviour
         if (collider.tag == "Obstacle")
         {
             Debug.Log("Funneee hehe");
-            triggeredOpposition = false;
+            //triggeredOpposition = false;
             opposingTrigger.enabled = true;
         }
     }

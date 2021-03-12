@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public class Timer : MonoBehaviour
@@ -12,6 +13,7 @@ public class Timer : MonoBehaviour
     public bool countDown = false;
     public int resetTimer = 50;
     public GameObject GameOverScreen;
+    public GameObject brainBrick;
     //public float easyExtraTime
 
     // Start is called before the first frame update
@@ -23,19 +25,19 @@ public class Timer : MonoBehaviour
 
     public void dificultyEasy()
     {
-        currentTime = currentTime + 20;
+        Debug.Log(" dificultyEasy");
     }
 
     public void dificultyMedium()
     {
-        currentTime = currentTime + 10;
-
+        Debug.Log(" dificultyMedium");
     }
 
     public void dificultyHard()
     {
-        currentTime = currentTime;
+        Debug.Log(" dificultyMedium");
     }
+
     // Update is called once per frame
     void Update()
     {
@@ -48,7 +50,7 @@ public class Timer : MonoBehaviour
         {
             Time.timeScale = 0f;
             Cursor.lockState = CursorLockMode.None;
-            GameOverScreen.SetActive(true);            
+            GameOverScreen.SetActive(true);
         }
     }
 
@@ -60,7 +62,8 @@ public class Timer : MonoBehaviour
         timerText.GetComponent<Text>().text = currentTime.ToString();
         countDown = false;
     }
- 
+
+
     
    // private void OnTriggerEnter(Collider collider)
     //{

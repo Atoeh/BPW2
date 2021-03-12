@@ -10,7 +10,7 @@ public class PauseMenu : MonoBehaviour
     public GameObject pauseMenuUI;
     public string sceneRestartGame = "SampleScene";
     public string sceneRestartLevel = "SampleScene";
-
+    public string sceneNextLevel = "Scene2";
 
     // Update is called once per frame
     void Update()
@@ -58,6 +58,11 @@ public class PauseMenu : MonoBehaviour
     public void RestartGame()
     {
         SceneManager.LoadScene(sceneRestartGame);
+    }
+
+    public void LoadnextLevel() 
+    {
+        SceneManager.LoadScene(sceneNextLevel);
     }
 
 }
