@@ -8,7 +8,6 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 12f;
     public float gravity = -9.81f;
     public float jumpHeight = 3f;
-    public KeyCode jump;
     public Transform groundCheck;
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
@@ -30,11 +29,6 @@ public class PlayerMovement : MonoBehaviour
 
         controller.Move(move*speed*Time.deltaTime);
 
-        if (Input.GetKeyDown(jump))
-        {
-            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
-            Debug.Log("Why are u not jumping");
-        }
 
         velocity.y += gravity * Time.deltaTime;                 //zwaartekracht_snelheid
 

@@ -4823,7 +4823,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 577475092}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
-        m_MethodName: QuitGame
+        m_MethodName: LoadnextLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -36260,8 +36260,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 1091595416}
   sceneRestartGame: SampleScene
-  sceneRestartLevel: Scene2
-  sceneNextLevel: Scene2
+  sceneRestartLevel: Scene3
+  sceneNextLevel: Scene4
 --- !u!114 &577475093
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41704,7 +41704,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9051238300485817969, guid: 2f6c4572e07a60b43b00e1c4f489a806, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.5
+      value: 6.6666665
       objectReference: {fileID: 0}
     - target: {fileID: 9051238300485817969, guid: 2f6c4572e07a60b43b00e1c4f489a806, type: 3}
       propertyPath: m_LocalPosition.y
@@ -61242,7 +61242,6 @@ MonoBehaviour:
   speed: 8
   gravity: -9.81
   jumpHeight: 2
-  jump: 32
   groundCheck: {fileID: 1691314472}
   groundDistance: 0.1
   groundMask:
@@ -80608,7 +80607,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1695448017}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -47.08, y: -0.35, z: 18.900002}
+  m_LocalPosition: {x: -47.08, y: -0.35, z: 17.900002}
   m_LocalScale: {x: 1, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
@@ -95606,7 +95605,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9051238300485817969, guid: 2f6c4572e07a60b43b00e1c4f489a806, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.8333335
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 9051238300485817969, guid: 2f6c4572e07a60b43b00e1c4f489a806, type: 3}
       propertyPath: m_LocalPosition.y

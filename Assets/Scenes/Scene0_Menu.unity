@@ -778,7 +778,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 446660485}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
@@ -2127,6 +2127,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1034450332}
   m_CullTransparentMesh: 0
+--- !u!1 &1084692069 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8183984146227053945, guid: 358ce50f68f7953428fe30b8255c4cd1, type: 3}
+  m_PrefabInstance: {fileID: 8183984145006823096}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1084692072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1084692069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66b85b4060ff6bf40b47c84690b99218, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1261529394
 GameObject:
   m_ObjectHideFlags: 0
@@ -2305,7 +2322,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1378867055}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
@@ -2461,7 +2478,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1418067617}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
@@ -2868,6 +2885,14 @@ PrefabInstance:
     - target: {fileID: 8183984146227053945, guid: 358ce50f68f7953428fe30b8255c4cd1, type: 3}
       propertyPath: m_Name
       value: MusicBox
+      objectReference: {fileID: 0}
+    - target: {fileID: 8183984146227053946, guid: 358ce50f68f7953428fe30b8255c4cd1, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: b96f17ea8782bb7458c0ee989cc49e54, type: 3}
+    - target: {fileID: 8183984146227053946, guid: 358ce50f68f7953428fe30b8255c4cd1, type: 3}
+      propertyPath: DopplerLevel
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8183984146227053947, guid: 358ce50f68f7953428fe30b8255c4cd1, type: 3}
       propertyPath: m_RootOrder
